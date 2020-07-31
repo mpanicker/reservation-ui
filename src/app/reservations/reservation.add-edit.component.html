@@ -1,0 +1,33 @@
+﻿<h1 *ngIf="isAddMode">Add Reservation</h1>
+<h1 *ngIf="!isAddMode">Edit Reservation</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="check_in_date">Check In Date</label>
+            <input type="text" formControlName="check_in_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_in_date.errors }" />
+        </div>
+        <div class="form-group col">
+            <label for="check_out_date">Check Out Date</label>
+            <input type="text" formControlName="check_out_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_out_date.errors }" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col">
+            <label for="num_of_guest">Number of Guests</label>
+            <input type="text" formControlName="num_of_guest" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_guest.errors }" />
+
+        </div>
+        <div class="form-group col">
+            <label for="num_of_rooms">Number of Rooms</label>
+            <input type="password" formControlName="num_of_rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_rooms.errors }" />
+
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/reservations" class="btn btn-link">Cancel</a>
+    </div>
+</form>

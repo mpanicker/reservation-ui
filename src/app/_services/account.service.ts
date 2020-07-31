@@ -24,6 +24,7 @@ export class AccountService {
         return this.userSubject.value;
     }
 
+  // tslint:disable-next-line:typedef
     login(username, password) {
         return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
             .pipe(map(user => {

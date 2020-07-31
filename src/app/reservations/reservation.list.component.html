@@ -1,0 +1,34 @@
+﻿<h1>Reservations</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Reservation</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 30%">Booking Number</th>
+            <th style="width: 30%">Check In Date</th>
+            <th style="width: 30%">Check Out Date</th>
+            <th style="width: 30%">Number of Guests</th>
+            <th style="width: 40%">Number of Rooms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let reservation of reservations">
+            <td>{{reservation.bookingNumber}}</td>
+            <td>{{reservation.check_in_date}}</td>
+            <td>{{reservation.check_out_date}}</td>
+            <td>{{reservation.num_of_guest}}</td>
+            <td>{{reservation.num_of_rooms}}</td>
+            <td style="white-space: nowrap">
+                <a routerLink="edit/{{reservation.bookingNumber}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="deleteReservation(reservation.bookingNumber)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="reservation.isDeleting">
+                    <span *ngIf="reservation.isDeleting" class="spinner-border spinner-border-sm"></span>
+                    <span *ngIf="!reservation.isDeleting">Delete</span>
+                </button>
+            </td>
+        </tr>
+        <tr *ngIf="!reservations">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
