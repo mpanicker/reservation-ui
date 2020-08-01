@@ -4,11 +4,11 @@
     <div class="form-row">
         <div class="form-group col">
             <label for="check_in_date">Check In Date</label>
-            <input type="text" formControlName="check_in_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_in_date.errors }" />
+            <input type="date" formControlName="check_in_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_in_date.errors }" />
         </div>
         <div class="form-group col">
             <label for="check_out_date">Check Out Date</label>
-            <input type="text" formControlName="check_out_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_out_date.errors }" />
+            <input type="date" formControlName="check_out_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_out_date.errors }" />
         </div>
     </div>
     <div class="form-row">
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group col">
             <label for="num_of_rooms">Number of Rooms</label>
-            <input type="password" formControlName="num_of_rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_rooms.errors }" />
+            <input type="text" formControlName="num_of_rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_rooms.errors }" />
 
         </div>
     </div>

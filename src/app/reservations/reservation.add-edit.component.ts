@@ -22,7 +22,7 @@ export class ReservationAddEditComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.id = this.route.snapshot.params['id'];
+        this.id = this.route.snapshot.params['bookingNumber'];
         this.isAddMode = !this.id;
 
         this.form = this.formBuilder.group({
