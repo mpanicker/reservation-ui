@@ -8,6 +8,7 @@
             <th style="width: 30%">Check Out Date</th>
             <th style="width: 30%">Number of Guests</th>
             <th style="width: 40%">Number of Rooms</th>
+          <th style="width: 40%">Reservation Created Date</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
             <td>{{reservation.check_out_date}}</td>
             <td>{{reservation.num_of_guest}}</td>
             <td>{{reservation.num_of_rooms}}</td>
+            <td>{{reservation.dateCreated}}</td>
             <td style="white-space: nowrap">
                 <a routerLink="edit/{{reservation.bookingNumber}}" class="btn btn-sm btn-primary mr-1">Edit</a>
                 <button (click)="deleteReservation(reservation.bookingNumber)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="reservation.isDeleting">

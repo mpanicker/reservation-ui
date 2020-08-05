@@ -10,19 +10,140 @@
             <label for="check_out_date">Check Out Date</label>
             <input type="date" formControlName="check_out_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.check_out_date.errors }" />
         </div>
+      <div class="form-group col">
+        <label for="num_of_guest">Number of Guests</label>
+        <input type="text" formControlName="num_of_guest" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_guest.errors }" />
+      </div>
+      <div class="form-group col">
+        <label for="num_of_rooms">Number of Rooms</label>
+        <input type="text" formControlName="num_of_rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_rooms.errors }" />
+      </div>
     </div>
+
     <div class="form-row">
-        <div class="form-group col">
-            <label for="num_of_guest">Number of Guests</label>
-            <input type="text" formControlName="num_of_guest" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_guest.errors }" />
-
-        </div>
-        <div class="form-group col">
-            <label for="num_of_rooms">Number of Rooms</label>
-            <input type="text" formControlName="num_of_rooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.num_of_rooms.errors }" />
-
-        </div>
+      <div class="form-group col">
+        <label for="reservation_total_price">Reservation Total Price</label>
+        <input type="text" formControlName="reservation_total_price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.reservation_total_price.errors }" />
+      </div>
+      <div class="form-group col">
+        <label for="reservation_currency">Reservation Currency</label>
+        <input type="text" formControlName="reservation_currency" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.reservation_currency.errors }" />
+      </div>
+      <div class="form-group col">
+        <label for="reservation_tax">Reservation Tax</label>
+        <input type="text" formControlName="reservation_tax" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.reservation_tax.errors }" />
+      </div>
+      <div class="form-group col">
+        <label for="payment_method">Payment Method</label>
+        <input type="text" formControlName="payment_method" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.payment_method.errors }" />
+      </div>
     </div>
+
+
+  <label for="guestDetails">Guest Details</label>
+  <div style="border:1px solid black; padding: 50px;">
+  <md-input-container formGroupName="guestDetails">
+  <div class="form-row">
+    <div class="form-group col">
+      <label for="full_name">Full Name</label>
+      <input type="text" formControlName="full_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.full_name').errors }" />
+    </div>
+    <div class="form-group col">
+      <label for="address">Guest Address</label>
+      <input type="text" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.address').errors }" />
+    </div>
+    <div class="form-group col">
+      <label for="country">Country</label>
+      <input type="text" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.country').errors }" />
+    </div>
+    <div class="form-group col">
+      <label for="phone">Phone</label>
+      <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.phone').errors }" />
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.email').errors }" />
+      </div>
+      <div class="form-group col">
+        <label for="language">Language</label>
+        <input type="text" formControlName="language" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('guestDetails.language').errors }" />
+      </div>
+    </div>
+  </md-input-container>
+  </div>
+
+  <label for="paymentDetails">Payment Details</label>
+  <div style="border:1px solid black; padding: 50px;">
+    <md-input-container formGroupName="paymentDetails">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="credit_card_num">Credit Card Number</label>
+          <input type="text" formControlName="credit_card_num" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('paymentDetails.credit_card_num').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="credit_card_type">Credit Card Type</label>
+          <input type="text" formControlName="credit_card_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('paymentDetails.credit_card_type').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="expiry_date">Expiry Date</label>
+          <input type="date" formControlName="expiry_date" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('paymentDetails.expiry_date').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="sec_code">Security Code</label>
+          <input type="text" formControlName="sec_code" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('paymentDetails.sec_code').errors }" />
+        </div>
+      </div>
+    </md-input-container>
+  </div>
+
+  <label for="roomDetails">Room Details</label>
+  <div style="border:1px solid black; padding: 50px;">
+    <md-input-container formGroupName="roomDetails">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="room_id">Room Number</label>
+          <input type="text" formControlName="room_id" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('roomDetails.room_id').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="room_name">Room Name</label>
+          <input type="text" formControlName="room_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('roomDetails.room_name').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="room_desc">Room Description</label>
+          <input type="text" formControlName="room_desc" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('roomDetails.room_desc').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="notes">Room Notes</label>
+          <input type="text" formControlName="notes" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('roomDetails.notes').errors }" />
+        </div>
+      </div>
+    </md-input-container>
+  </div>
+
+  <label for="hotelDetails">Room Details</label>
+  <div style="border:1px solid black; padding: 50px;">
+    <md-input-container formGroupName="hotelDetails">
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="hotel_name">Hotel Name</label>
+          <input type="text" formControlName="hotel_name" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('hotelDetails.hotel_name').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="hotel_address">Hotel Address</label>
+          <input type="text" formControlName="hotel_address" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('hotelDetails.hotel_address').errors }" />
+        </div>
+        <div class="form-group col">
+          <label for="hotel_phone">Hotel Phone</label>
+          <input type="text" formControlName="hotel_phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.get('hotelDetails.hotel_phone').errors }" />
+        </div>
+
+      </div>
+    </md-input-container>
+  </div>
+
+  <div style="padding: 15px;">
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
@@ -30,4 +151,5 @@
         </button>
         <a routerLink="/reservations" class="btn btn-link">Cancel</a>
     </div>
+  </div>
 </form>
